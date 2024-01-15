@@ -1,0 +1,23 @@
+input{
+    margin-right: 6px;
+
+}
+
+form{
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: large;
+}
+
+form label {
+    padding-right: 8px;;
+}
+
+h1{
+    text-align: center;
+}
+
+.cat{
+    font-size: smaller;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
