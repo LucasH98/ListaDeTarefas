@@ -40,7 +40,5 @@ Se você quiser contribuir para o desenvolvimento desta aplicação, siga estas 
 6. Faça o push para o seu fork (`git push origin feature/sua-contribuicao`).
 7. Abra um pull request para o repositório original.
 
-## Licença
 
-Este projeto está licenciado sob a [Licença XYZ](link_para_licenca).
 
