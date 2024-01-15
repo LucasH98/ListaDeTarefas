@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import Form from './form/index';
 import Tarefas from './tarefas/index';
 import './Main.css';
 
-export default function Main() {
+export default function Main()  {
     const [novatarefa, setNovaTarefa] = useState({ Name: '', Category: '' });
     const [listatarefas, setListatarefas] = useState([]);
     const [index, setIndex] = useState(-1);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +20,8 @@ export default function Main() {
         if (index === -1 && task.Name && task.Name.trim() !== '') { //se n tiver tarefa ainda
             setNovaTarefa({ Name: '', Category: '' });
             setListatarefas([...listatarefas, task]);
+
+            localStorage.setItem("TaskList",JSON.stringify([...listatarefas,novatarefa]))
         }
         else {
             const updatedList = [...listatarefas];
@@ -27,8 +31,20 @@ export default function Main() {
             setListatarefas(updatedList);
             setNovaTarefa({ Name: '', Category: '' });
             setIndex(-1);
+            localStorage.setItem("TaskList",JSON.stringify(updatedList))
+
         }
+
     }
+
+    useEffect(()=>{
+
+    const tasks = localStorage.getItem('TaskList')
+    if(tasks){
+        setListatarefas(JSON.parse(tasks));
+    }
+    },[])
+
 
     const handleEdit = (index) => {
         const updatedList = [...listatarefas];
@@ -40,6 +56,10 @@ export default function Main() {
         const updatedList = [...listatarefas];
         updatedList.splice(index, 1);
         setListatarefas(updatedList);
+        localStorage.setItem("TaskList",JSON.stringify(updatedList))
+
+
+
     }
 
     const handleChange = (e) => {
@@ -49,7 +69,6 @@ export default function Main() {
             [name]: value,
         }));
     };
-
 
 
     return (
