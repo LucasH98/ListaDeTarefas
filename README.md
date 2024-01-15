@@ -1,6 +1,6 @@
 # My List of Tasks
 
-![Logo](link_para_uma_imagem_ou_logo)
+
 
 **My List of Tasks** é uma aplicação simples para gerenciar suas tarefas diárias. Você pode adicionar, editar, excluir e visualizar suas tarefas de maneira fácil e rápida.
 
